@@ -8,56 +8,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 215 28% 17%;
-    --foreground: 213 31% 91%;
+    --background: 220 13% 4%;
+    --foreground: 210 40% 95%;
 
-    --card: 215 25% 20%;
-    --card-foreground: 213 31% 91%;
+    --card: 220 13% 6%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 215 25% 20%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 220 13% 6%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 214 84% 56%;
-    --primary-foreground: 215 28% 17%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 13% 4%;
 
-    --secondary: 215 19% 35%;
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 220 13% 12%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 215 19% 35%;
-    --muted-foreground: 213 13% 65%;
+    --muted: 220 13% 8%;
+    --muted-foreground: 210 20% 60%;
 
-    --accent: 215 19% 35%;
-    --accent-foreground: 213 31% 91%;
+    --accent: 220 13% 10%;
+    --accent-foreground: 210 40% 95%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 213 31% 91%;
+    --destructive-foreground: 210 40% 95%;
 
-    --border: 215 19% 35%;
-    --input: 215 25% 20%;
-    --ring: 214 84% 56%;
+    --border: 220 13% 12%;
+    --input: 220 13% 8%;
+    --ring: 180 100% 50%;
+
+    /* Futuristic colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 270 100% 75%;
+    --neon-green: 120 100% 50%;
+    --neon-red: 0 100% 60%;
 
     /* Trading specific colors */
-    --success: 142 76% 36%;
-    --success-foreground: 355 7% 97%;
-    --danger: 0 84% 60%;
-    --danger-foreground: 355 7% 97%;
-    --warning: 48 96% 53%;
-    --warning-foreground: 26 83% 14%;
+    --success: 120 100% 50%;
+    --success-foreground: 220 13% 4%;
+    --danger: 0 100% 60%;
+    --danger-foreground: 220 13% 4%;
+    --warning: 48 100% 50%;
+    --warning-foreground: 220 13% 4%;
 
     /* Chart colors */
-    --chart-buy: 142 76% 36%;
-    --chart-sell: 0 84% 60%;
-    --chart-neutral: 213 13% 65%;
-    --chart-grid: 215 19% 35%;
+    --chart-buy: 120 100% 50%;
+    --chart-sell: 0 100% 60%;
+    --chart-neutral: 210 20% 60%;
+    --chart-grid: 220 13% 12%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 66%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
-    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 70%));
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50% / 0.1), hsl(180 100% 50% / 0.3));
+    --gradient-success: linear-gradient(135deg, hsl(120 100% 50% / 0.1), hsl(120 100% 50% / 0.3));
+    --gradient-danger: linear-gradient(135deg, hsl(0 100% 60% / 0.1), hsl(0 100% 60% / 0.3));
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 6%), hsl(220 13% 8%));
 
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(215 28% 17% / 0.5);
-    --shadow-glow: 0 0 40px hsl(214 84% 56% / 0.2);
+    --shadow-elegant: 0 4px 20px -4px hsl(180 100% 50% / 0.1);
+    --shadow-glow: 0 0 20px hsl(180 100% 50% / 0.3);
+    --shadow-neon: 0 0 30px hsl(180 100% 50% / 0.5);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
