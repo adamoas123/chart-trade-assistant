@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useToast } from '@/hooks/use-toast';
-import { Calculator, Copy, TrendingUp, TrendingDown, DollarSign, Target, Shield, BarChart3 } from 'lucide-react';
+import { Calculator, Copy, TrendingUp, TrendingDown, DollarSign, Target, Shield } from 'lucide-react';
 
 interface TradeCalculation {
   riskAmount: number;
@@ -29,7 +29,6 @@ interface FormData {
 
 const PriceCalculator = () => {
   const { toast } = useToast();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [formData, setFormData] = useState<FormData>({
     tradeDirection: 'buy',
@@ -167,72 +166,6 @@ const PriceCalculator = () => {
       });
     }
   };
-
-  const drawChart = () => {
-    const canvas = canvasRef.current;
-    if (!canvas || !calculation) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const { width, height } = canvas;
-    ctx.clearRect(0, 0, width, height);
-
-    // Chart setup
-    const padding = 40;
-    const chartWidth = width - 2 * padding;
-    const chartHeight = height - 2 * padding;
-
-    // Price levels
-    const prices = [
-      calculation.takeProfitPrice,
-      Number(formData.entryPrice),
-      calculation.breakevenPrice,
-      calculation.stopLossPrice
-    ].sort((a, b) => b - a);
-
-    const maxPrice = prices[0];
-    const minPrice = prices[prices.length - 1];
-    const priceRange = maxPrice - minPrice;
-
-    // Draw grid
-    ctx.strokeStyle = 'hsl(var(--chart-grid))';
-    ctx.lineWidth = 1;
-    for (let i = 0; i <= 5; i++) {
-      const y = padding + (chartHeight / 5) * i;
-      ctx.beginPath();
-      ctx.moveTo(padding, y);
-      ctx.lineTo(width - padding, y);
-      ctx.stroke();
-    }
-
-    // Draw price levels
-    const drawPriceLine = (price: number, color: string, label: string) => {
-      const y = padding + chartHeight - ((price - minPrice) / priceRange) * chartHeight;
-      
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(padding, y);
-      ctx.lineTo(width - padding, y);
-      ctx.stroke();
-
-      ctx.fillStyle = color;
-      ctx.font = '12px system-ui';
-      ctx.fillText(`${label}: ${price.toFixed(5)}`, padding + 10, y - 8);
-    };
-
-    drawPriceLine(calculation.takeProfitPrice, 'hsl(var(--chart-buy))', 'TP');
-    drawPriceLine(Number(formData.entryPrice), 'hsl(var(--primary))', 'Entry');
-    drawPriceLine(calculation.breakevenPrice, 'hsl(var(--chart-neutral))', 'BE');
-    drawPriceLine(calculation.stopLossPrice, 'hsl(var(--chart-sell))', 'SL');
-  };
-
-  useEffect(() => {
-    if (calculation) {
-      drawChart();
-    }
-  }, [calculation, formData.entryPrice]);
 
   return (
     <TooltipProvider>
@@ -528,23 +461,6 @@ const PriceCalculator = () => {
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="shadow-elegant">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <BarChart3 className="h-5 w-5" />
-                        Price Levels Chart
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <canvas
-                        ref={canvasRef}
-                        width={400}
-                        height={300}
-                        className="w-full border rounded-md bg-card"
-                      />
                     </CardContent>
                   </Card>
                 </>
