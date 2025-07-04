@@ -18,6 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        buy: "bg-success text-success-foreground hover:bg-success/90 shadow-glow",
+        sell: "bg-danger text-danger-foreground hover:bg-danger/90 shadow-glow",
+        "buy-outline": "border border-success text-success hover:bg-success hover:text-success-foreground",
+        "sell-outline": "border border-danger text-danger hover:bg-danger hover:text-danger-foreground",
       },
       size: {
         default: "h-10 px-4 py-2",
