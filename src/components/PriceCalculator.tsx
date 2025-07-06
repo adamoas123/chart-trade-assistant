@@ -172,17 +172,23 @@ const PriceCalculator = () => {
       }
       
       if (stopLossPips > 0) {
-        const pipValue = calculation.riskAmount / stopLossPips;
-        const lotSize = pipValue / (pipSize * 100000);
+        // Keep lot size consistent and recalculate risk amount
+        const lotSize = calculation.lotSize;
+        const pipValue = lotSize * (pipSize * 100000);
+        const newRiskAmount = pipValue * stopLossPips;
+        const riskRewardRatio = Number(formData.riskRewardRatio);
+        const expectedProfit = newRiskAmount * riskRewardRatio;
         
         setCalculation({
           ...calculation,
           stopLossPrice,
           pipValue,
-          lotSize,
+          riskAmount: newRiskAmount,
+          expectedProfit,
         });
         
-        // Update the form data to reflect the new pips
+        // Update the editable risk amount and form data
+        setEditableRiskAmount(newRiskAmount.toFixed(2));
         setFormData({ ...formData, stopLossPips: stopLossPips.toString() });
       }
     }
@@ -477,8 +483,8 @@ const PriceCalculator = () => {
                           </div>
                         </div>
                         <div>
-                          <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Lot Size</Label>
-                          <div className="mt-2 p-3 bg-muted/30 border border-border/30 rounded-md font-mono text-sm">
+                          <Label className="text-xs font-light text-neon-cyan uppercase tracking-wider">Lot Size</Label>
+                          <div className="mt-2 p-3 bg-neon-cyan/10 border border-neon-cyan/30 rounded-md font-mono text-sm text-neon-cyan shadow-glow">
                             {calculation.lotSize.toFixed(2)}
                           </div>
                         </div>
