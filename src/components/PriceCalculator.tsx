@@ -152,8 +152,26 @@ const PriceCalculator = () => {
   };
 
   const copyToClipboard = async (value: number, label: string) => {
+    const text = value.toFixed(5);
+    
     try {
-      await navigator.clipboard.writeText(value.toFixed(5));
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        // Fallback for older browsers or non-secure contexts
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+      }
+      
       toast({
         title: "Copied!",
         description: `${label} copied to clipboard`,
