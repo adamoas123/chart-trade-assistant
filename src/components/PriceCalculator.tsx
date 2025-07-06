@@ -42,6 +42,8 @@ const PriceCalculator = () => {
 
   const [calculation, setCalculation] = useState<TradeCalculation | null>(null);
   const [editableRiskAmount, setEditableRiskAmount] = useState<string>('');
+  const [editableStopLoss, setEditableStopLoss] = useState<string>('');
+  const [editableTakeProfit, setEditableTakeProfit] = useState<string>('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = (): boolean => {
@@ -126,6 +128,8 @@ const PriceCalculator = () => {
 
     setCalculation(result);
     setEditableRiskAmount(riskAmount.toFixed(2));
+    setEditableStopLoss(stopLossPrice.toFixed(5));
+    setEditableTakeProfit(takeProfitPrice.toFixed(5));
   };
 
   const handleRiskAmountChange = (newRiskAmount: string) => {
@@ -148,6 +152,73 @@ const PriceCalculator = () => {
         lotSize,
         expectedProfit,
       });
+    }
+  };
+
+  const handleStopLossChange = (newStopLoss: string) => {
+    setEditableStopLoss(newStopLoss);
+    
+    if (calculation && !isNaN(Number(newStopLoss)) && Number(newStopLoss) > 0 && formData.entryPrice) {
+      const stopLossPrice = Number(newStopLoss);
+      const entryPrice = Number(formData.entryPrice);
+      const pipSize = formData.currencyPair.includes('JPY') ? 0.01 : 0.0001;
+      
+      // Calculate new stop loss pips based on the price difference
+      let stopLossPips: number;
+      if (formData.tradeDirection === 'buy') {
+        stopLossPips = (entryPrice - stopLossPrice) / pipSize;
+      } else {
+        stopLossPips = (stopLossPrice - entryPrice) / pipSize;
+      }
+      
+      if (stopLossPips > 0) {
+        const pipValue = calculation.riskAmount / stopLossPips;
+        const lotSize = pipValue / (pipSize * 100000);
+        
+        setCalculation({
+          ...calculation,
+          stopLossPrice,
+          pipValue,
+          lotSize,
+        });
+        
+        // Update the form data to reflect the new pips
+        setFormData({ ...formData, stopLossPips: stopLossPips.toString() });
+      }
+    }
+  };
+
+  const handleTakeProfitChange = (newTakeProfit: string) => {
+    setEditableTakeProfit(newTakeProfit);
+    
+    if (calculation && !isNaN(Number(newTakeProfit)) && Number(newTakeProfit) > 0 && formData.entryPrice) {
+      const takeProfitPrice = Number(newTakeProfit);
+      const entryPrice = Number(formData.entryPrice);
+      const pipSize = formData.currencyPair.includes('JPY') ? 0.01 : 0.0001;
+      const stopLossPips = Number(formData.stopLossPips);
+      
+      // Calculate new take profit pips based on the price difference
+      let takeProfitPips: number;
+      if (formData.tradeDirection === 'buy') {
+        takeProfitPips = (takeProfitPrice - entryPrice) / pipSize;
+      } else {
+        takeProfitPips = (entryPrice - takeProfitPrice) / pipSize;
+      }
+      
+      if (takeProfitPips > 0) {
+        // Calculate new risk/reward ratio and expected profit
+        const newRiskRewardRatio = takeProfitPips / stopLossPips;
+        const expectedProfit = calculation.riskAmount * newRiskRewardRatio;
+        
+        setCalculation({
+          ...calculation,
+          takeProfitPrice,
+          expectedProfit,
+        });
+        
+        // Update the form data to reflect the new risk/reward ratio
+        setFormData({ ...formData, riskRewardRatio: newRiskRewardRatio.toFixed(2) });
+      }
     }
   };
 
@@ -432,9 +503,16 @@ const PriceCalculator = () => {
                     <div className="space-y-4">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between p-4 bg-danger/5 border border-danger/20 rounded-lg backdrop-blur-sm">
-                          <div>
+                          <div className="flex-1 mr-4">
                             <Label className="text-xs font-light text-danger uppercase tracking-wider">Stop Loss</Label>
-                            <div className="font-mono text-xl text-danger mt-1">{calculation.stopLossPrice.toFixed(5)}</div>
+                            <Input
+                              type="number"
+                              step="0.00001"
+                              value={editableStopLoss}
+                              onChange={(e) => handleStopLossChange(e.target.value)}
+                              className="mt-2 bg-transparent border-danger/30 focus:border-danger/50 focus:ring-danger/20 font-mono text-lg text-danger"
+                            />
+                            <p className="text-xs text-danger/70 mt-1">Pips: {formData.stopLossPips}</p>
                           </div>
                           <button
                             onClick={() => copyToClipboard(calculation.stopLossPrice, 'Stop Loss')}
@@ -458,9 +536,16 @@ const PriceCalculator = () => {
                         </div>
 
                         <div className="flex items-center justify-between p-4 bg-success/5 border border-success/20 rounded-lg backdrop-blur-sm">
-                          <div>
+                          <div className="flex-1 mr-4">
                             <Label className="text-xs font-light text-success uppercase tracking-wider">Take Profit</Label>
-                            <div className="font-mono text-xl text-success mt-1">{calculation.takeProfitPrice.toFixed(5)}</div>
+                            <Input
+                              type="number"
+                              step="0.00001"
+                              value={editableTakeProfit}
+                              onChange={(e) => handleTakeProfitChange(e.target.value)}
+                              className="mt-2 bg-transparent border-success/30 focus:border-success/50 focus:ring-success/20 font-mono text-lg text-success"
+                            />
+                            <p className="text-xs text-success/70 mt-1">R:R: {formData.riskRewardRatio}</p>
                           </div>
                           <button
                             onClick={() => copyToClipboard(calculation.takeProfitPrice, 'Take Profit')}
