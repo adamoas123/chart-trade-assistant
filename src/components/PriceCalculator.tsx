@@ -449,6 +449,59 @@ const PriceCalculator = () => {
                   <Calculator className="h-4 w-4" />
                   Analyze
                 </button>
+
+                {/* TP Levels Table */}
+                {calculation && (
+                  <div className="mt-6 bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
+                    <div className="mb-4">
+                      <h3 className="text-sm font-light text-neon-cyan mb-2 flex items-center gap-2 uppercase tracking-wider">
+                        <Target className="h-4 w-4" />
+                        Take Profit Levels
+                      </h3>
+                      <div className="w-12 h-px bg-neon-cyan/50"></div>
+                    </div>
+                    <div className="space-y-2">
+                      {(() => {
+                        const entryPrice = Number(formData.entryPrice);
+                        const takeProfitPrice = calculation.takeProfitPrice;
+                        const totalDistance = Math.abs(takeProfitPrice - entryPrice);
+                        const tp1Distance = totalDistance * 0.33;
+                        const tp2Distance = totalDistance * 0.66;
+                        const tp3Distance = totalDistance;
+
+                        let tp1Price, tp2Price, tp3Price;
+                        if (formData.tradeDirection === 'buy') {
+                          tp1Price = entryPrice + tp1Distance;
+                          tp2Price = entryPrice + tp2Distance;
+                          tp3Price = entryPrice + tp3Distance;
+                        } else {
+                          tp1Price = entryPrice - tp1Distance;
+                          tp2Price = entryPrice - tp2Distance;
+                          tp3Price = entryPrice - tp3Distance;
+                        }
+
+                        return [
+                          { label: 'TP1 (33%)', price: tp1Price },
+                          { label: 'TP2 (66%)', price: tp2Price },
+                          { label: 'TP3 (100%)', price: tp3Price }
+                        ].map((tp, index) => (
+                          <div key={index} className="flex items-center justify-between p-3 bg-success/5 border border-success/20 rounded-lg">
+                            <div className="flex-1">
+                              <div className="text-xs font-light text-success uppercase tracking-wider">{tp.label}</div>
+                              <div className="font-mono text-lg text-success mt-1">{tp.price.toFixed(5)}</div>
+                            </div>
+                            <button
+                              onClick={() => copyToClipboard(tp.price, tp.label)}
+                              className="p-2 bg-success/10 border border-success/30 rounded-md text-success hover:bg-success/20 transition-colors"
+                            >
+                              <Copy className="h-4 w-4" />
+                            </button>
+                          </div>
+                        ));
+                      })()}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
