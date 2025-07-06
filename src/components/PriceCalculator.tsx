@@ -267,11 +267,11 @@ const PriceCalculator = () => {
       <div className="min-h-screen bg-background p-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-light mb-6 flex items-center justify-center gap-4 text-neon-cyan">
+            <h1 className="text-5xl font-light mb-6 flex items-center justify-center gap-4 text-foreground">
               <Calculator className="h-10 w-10" />
               PRICE CALCULATOR
             </h1>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-4"></div>
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto mb-4"></div>
             <p className="text-muted-foreground text-sm font-light tracking-wider uppercase">
               Risk Management System
             </p>
@@ -281,11 +281,11 @@ const PriceCalculator = () => {
             {/* Input Section */}
             <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
               <div className="mb-6">
-                <h2 className="text-lg font-light text-neon-cyan mb-2 flex items-center gap-2">
+                <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
                   <Shield className="h-4 w-4" />
                   PARAMETERS
                 </h2>
-                <div className="w-12 h-px bg-neon-cyan/50"></div>
+                <div className="w-12 h-px bg-border"></div>
               </div>
               <div className="space-y-8">
                 {/* Trade Direction Toggle */}
@@ -333,7 +333,7 @@ const PriceCalculator = () => {
                       value={formData.currencyPair}
                       onChange={(e) => setFormData({ ...formData, currencyPair: e.target.value.toUpperCase() })}
                       placeholder="EURUSD"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.currencyPair ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.currencyPair ? 'border-danger' : ''}`}
                     />
                     {errors.currencyPair && <p className="text-danger text-xs mt-1 font-light">{errors.currencyPair}</p>}
                   </div>
@@ -354,7 +354,7 @@ const PriceCalculator = () => {
                       value={formData.entryPrice}
                       onChange={(e) => setFormData({ ...formData, entryPrice: e.target.value })}
                       placeholder="1.12345"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.entryPrice ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.entryPrice ? 'border-danger' : ''}`}
                     />
                     {errors.entryPrice && <p className="text-danger text-xs mt-1 font-light">{errors.entryPrice}</p>}
                   </div>
@@ -374,7 +374,7 @@ const PriceCalculator = () => {
                       value={formData.accountSize}
                       onChange={(e) => setFormData({ ...formData, accountSize: e.target.value })}
                       placeholder="10000"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.accountSize ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.accountSize ? 'border-danger' : ''}`}
                     />
                     {errors.accountSize && <p className="text-danger text-xs mt-1 font-light">{errors.accountSize}</p>}
                   </div>
@@ -395,7 +395,7 @@ const PriceCalculator = () => {
                       value={formData.riskPercentage}
                       onChange={(e) => setFormData({ ...formData, riskPercentage: e.target.value })}
                       placeholder="1"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.riskPercentage ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.riskPercentage ? 'border-danger' : ''}`}
                     />
                     {errors.riskPercentage && <p className="text-danger text-xs mt-1 font-light">{errors.riskPercentage}</p>}
                   </div>
@@ -416,7 +416,7 @@ const PriceCalculator = () => {
                       value={formData.riskRewardRatio}
                       onChange={(e) => setFormData({ ...formData, riskRewardRatio: e.target.value })}
                       placeholder="2"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.riskRewardRatio ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.riskRewardRatio ? 'border-danger' : ''}`}
                     />
                     {errors.riskRewardRatio && <p className="text-danger text-xs mt-1 font-light">{errors.riskRewardRatio}</p>}
                   </div>
@@ -436,7 +436,7 @@ const PriceCalculator = () => {
                       value={formData.stopLossPips}
                       onChange={(e) => setFormData({ ...formData, stopLossPips: e.target.value })}
                       placeholder="50"
-                      className={`mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm ${errors.stopLossPips ? 'border-danger' : ''}`}
+                      className={`mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm ${errors.stopLossPips ? 'border-danger' : ''}`}
                     />
                     {errors.stopLossPips && <p className="text-danger text-xs mt-1 font-light">{errors.stopLossPips}</p>}
                   </div>
@@ -444,7 +444,7 @@ const PriceCalculator = () => {
 
                 <button 
                   onClick={calculateTrade} 
-                  className="w-full py-4 bg-gradient-to-r from-neon-cyan/20 to-neon-cyan/10 border border-neon-cyan/30 rounded-lg text-neon-cyan hover:from-neon-cyan/30 hover:to-neon-cyan/20 hover:shadow-neon transition-all duration-300 flex items-center justify-center gap-3 font-light tracking-wider uppercase"
+                  className="w-full py-4 bg-gradient-to-r from-accent/40 to-accent/20 border border-border/50 rounded-lg text-foreground hover:from-accent/50 hover:to-accent/30 hover:shadow-elegant transition-all duration-300 flex items-center justify-center gap-3 font-light tracking-wider uppercase"
                 >
                   <Calculator className="h-4 w-4" />
                   Analyze
@@ -454,11 +454,11 @@ const PriceCalculator = () => {
                 {calculation && (
                   <div className="mt-6 bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
                     <div className="mb-4">
-                      <h3 className="text-sm font-light text-neon-cyan mb-2 flex items-center gap-2 uppercase tracking-wider">
+                      <h3 className="text-sm font-light text-foreground mb-2 flex items-center gap-2 uppercase tracking-wider">
                         <Target className="h-4 w-4" />
                         Take Profit Levels
                       </h3>
-                      <div className="w-12 h-px bg-neon-cyan/50"></div>
+                      <div className="w-12 h-px bg-border"></div>
                     </div>
                     <div className="space-y-2">
                       {(() => {
@@ -511,11 +511,11 @@ const PriceCalculator = () => {
                 <>
                   <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
                     <div className="mb-6">
-                      <h2 className="text-lg font-light text-neon-cyan mb-2 flex items-center gap-2">
+                      <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
                         <DollarSign className="h-4 w-4" />
                         METRICS
                       </h2>
-                      <div className="w-12 h-px bg-neon-cyan/50"></div>
+                      <div className="w-12 h-px bg-border"></div>
                     </div>
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
@@ -526,7 +526,7 @@ const PriceCalculator = () => {
                             step="0.01"
                             value={editableRiskAmount}
                             onChange={(e) => handleRiskAmountChange(e.target.value)}
-                            className="mt-2 bg-transparent border-border/30 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 font-mono text-sm"
+                            className="mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm"
                           />
                         </div>
                         <div>
@@ -536,8 +536,8 @@ const PriceCalculator = () => {
                           </div>
                         </div>
                         <div>
-                          <Label className="text-xs font-light text-neon-cyan uppercase tracking-wider">Lot Size</Label>
-                          <div className="mt-2 p-3 bg-neon-cyan/10 border border-neon-cyan/30 rounded-md font-mono text-sm text-neon-cyan shadow-glow">
+                          <Label className="text-xs font-light text-foreground uppercase tracking-wider">Lot Size</Label>
+                          <div className="mt-2 p-3 bg-accent/20 border border-border/50 rounded-md font-mono text-sm text-foreground">
                             {calculation.lotSize.toFixed(2)}
                           </div>
                         </div>
@@ -553,11 +553,11 @@ const PriceCalculator = () => {
 
                   <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
                     <div className="mb-6">
-                      <h2 className="text-lg font-light text-neon-cyan mb-2 flex items-center gap-2">
+                      <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
                         <Target className="h-4 w-4" />
                         LEVELS
                       </h2>
-                      <div className="w-12 h-px bg-neon-cyan/50"></div>
+                      <div className="w-12 h-px bg-border"></div>
                     </div>
                     <div className="space-y-4">
                       <div className="space-y-3">

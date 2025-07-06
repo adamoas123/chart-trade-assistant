@@ -8,85 +8,79 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 13% 4%;
-    --foreground: 210 40% 95%;
+    /* Professional Black Theme */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 13% 6%;
-    --card-foreground: 210 40% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 13% 6%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 13% 4%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 220 13% 12%;
-    --secondary-foreground: 210 40% 95%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 13% 8%;
-    --muted-foreground: 210 20% 60%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 220 13% 10%;
-    --accent-foreground: 210 40% 95%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 12%;
-    --input: 220 13% 8%;
-    --ring: 180 100% 50%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 30%;
 
-    /* Futuristic colors */
-    --neon-cyan: 180 100% 50%;
-    --neon-purple: 270 100% 75%;
-    --neon-green: 120 100% 50%;
-    --neon-red: 0 100% 60%;
+    /* Professional accent colors */
+    --neon-cyan: 0 0% 85%;
+    --neon-purple: 0 0% 75%;
+    --neon-green: 0 0% 65%;
+    --neon-red: 0 84% 60%;
 
     /* Trading specific colors */
-    --success: 120 100% 50%;
-    --success-foreground: 220 13% 4%;
-    --danger: 0 100% 60%;
-    --danger-foreground: 220 13% 4%;
-    --warning: 48 100% 50%;
-    --warning-foreground: 220 13% 4%;
+    --success: 120 100% 75%;
+    --success-foreground: 0 0% 9%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 98%;
+    --warning: 45 100% 70%;
+    --warning-foreground: 0 0% 9%;
 
     /* Chart colors */
-    --chart-buy: 120 100% 50%;
-    --chart-sell: 0 100% 60%;
-    --chart-neutral: 210 20% 60%;
-    --chart-grid: 220 13% 12%;
+    --chart-buy: 120 100% 75%;
+    --chart-sell: 0 84% 60%;
+    --chart-neutral: 0 0% 55%;
+    --chart-grid: 0 0% 15%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50% / 0.1), hsl(180 100% 50% / 0.3));
-    --gradient-success: linear-gradient(135deg, hsl(120 100% 50% / 0.1), hsl(120 100% 50% / 0.3));
-    --gradient-danger: linear-gradient(135deg, hsl(0 100% 60% / 0.1), hsl(0 100% 60% / 0.3));
-    --gradient-card: linear-gradient(135deg, hsl(220 13% 6%), hsl(220 13% 8%));
+    /* Subtle gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-success: linear-gradient(135deg, hsl(120 100% 75% / 0.1), hsl(120 100% 75% / 0.05));
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60% / 0.1), hsl(0 84% 60% / 0.05));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 6%));
 
-    /* Shadows */
-    --shadow-elegant: 0 4px 20px -4px hsl(180 100% 50% / 0.1);
-    --shadow-glow: 0 0 20px hsl(180 100% 50% / 0.3);
-    --shadow-neon: 0 0 30px hsl(180 100% 50% / 0.5);
+    /* Professional shadows */
+    --shadow-elegant: 0 4px 20px -8px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(0 0% 100% / 0.1);
+    --shadow-neon: 0 0 30px hsl(0 0% 100% / 0.15);
 
-    /* Animations */
+    /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 30%;
   }
 
   .dark {
