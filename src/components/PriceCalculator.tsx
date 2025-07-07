@@ -264,30 +264,30 @@ const PriceCalculator = () => {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-background p-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-light mb-6 flex items-center justify-center gap-4 text-foreground">
-              <Calculator className="h-10 w-10" />
+      <div className="min-h-screen bg-background p-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-light mb-4 flex items-center justify-center gap-3 text-foreground">
+              <Calculator className="h-7 w-7" />
               PRICE CALCULATOR
             </h1>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto mb-4"></div>
-            <p className="text-muted-foreground text-sm font-light tracking-wider uppercase">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto mb-3"></div>
+            <p className="text-muted-foreground text-xs font-light tracking-wider uppercase">
               Risk Management System
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
-            <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
-              <div className="mb-6">
-                <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
-                  <Shield className="h-4 w-4" />
+            <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+              <div className="mb-4">
+                <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
+                  <Shield className="h-3 w-3" />
                   PARAMETERS
                 </h2>
-                <div className="w-12 h-px bg-border"></div>
+                <div className="w-8 h-px bg-border"></div>
               </div>
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {/* Trade Direction Toggle */}
                 <div>
                   <Label className="text-xs font-light mb-4 block text-muted-foreground uppercase tracking-wider">Direction</Label>
@@ -317,8 +317,8 @@ const PriceCalculator = () => {
                   </div>
                 </div>
 
-                {/* Input Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {/* Input Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -444,21 +444,21 @@ const PriceCalculator = () => {
 
                 <button 
                   onClick={calculateTrade} 
-                  className="w-full py-4 bg-gradient-to-r from-accent/40 to-accent/20 border border-border/50 rounded-lg text-foreground hover:from-accent/50 hover:to-accent/30 hover:shadow-elegant transition-all duration-300 flex items-center justify-center gap-3 font-light tracking-wider uppercase"
+                  className="w-full py-3 bg-gradient-to-r from-accent/40 to-accent/20 border border-border/50 rounded-lg text-foreground hover:from-accent/50 hover:to-accent/30 hover:shadow-elegant transition-all duration-300 flex items-center justify-center gap-2 font-light tracking-wider uppercase text-sm"
                 >
-                  <Calculator className="h-4 w-4" />
+                  <Calculator className="h-3 w-3" />
                   Analyze
                 </button>
 
                 {/* TP Levels Table */}
                 {calculation && (
-                  <div className="mt-6 bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
-                    <div className="mb-4">
-                      <h3 className="text-sm font-light text-foreground mb-2 flex items-center gap-2 uppercase tracking-wider">
-                        <Target className="h-4 w-4" />
+                  <div className="mt-4 bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                    <div className="mb-3">
+                      <h3 className="text-xs font-light text-foreground mb-1 flex items-center gap-2 uppercase tracking-wider">
+                        <Target className="h-3 w-3" />
                         Take Profit Levels
                       </h3>
-                      <div className="w-12 h-px bg-border"></div>
+                      <div className="w-8 h-px bg-border"></div>
                     </div>
                     <div className="space-y-2">
                       {(() => {
@@ -508,59 +508,59 @@ const PriceCalculator = () => {
             {/* Results Section */}
             <div className="space-y-6">
               {calculation && (
-                <>
-                  <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
-                    <div className="mb-6">
-                      <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
-                        <DollarSign className="h-4 w-4" />
-                        METRICS
-                      </h2>
-                      <div className="w-12 h-px bg-border"></div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Risk Amount</Label>
-                          <Input
-                            type="number"
-                            step="0.01"
-                            value={editableRiskAmount}
-                            onChange={(e) => handleRiskAmountChange(e.target.value)}
-                            className="mt-2 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm"
-                          />
-                        </div>
-                        <div>
-                          <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Pip Value</Label>
-                          <div className="mt-2 p-3 bg-muted/30 border border-border/30 rounded-md font-mono text-sm">
-                            ${calculation.pipValue.toFixed(2)}
-                          </div>
-                        </div>
-                        <div>
-                          <Label className="text-xs font-light text-foreground uppercase tracking-wider">Lot Size</Label>
-                          <div className="mt-2 p-3 bg-accent/20 border border-border/50 rounded-md font-mono text-sm text-foreground">
-                            {calculation.lotSize.toFixed(2)}
-                          </div>
-                        </div>
-                        <div>
-                          <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Expected Profit</Label>
-                          <div className="mt-2 p-3 bg-success/10 border border-success/30 rounded-md font-mono text-sm text-success">
-                            ${calculation.expectedProfit.toFixed(2)}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 <>
+                   <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                     <div className="mb-3">
+                       <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
+                         <DollarSign className="h-3 w-3" />
+                         METRICS
+                       </h2>
+                       <div className="w-8 h-px bg-border"></div>
+                     </div>
+                     <div className="space-y-3">
+                       <div className="grid grid-cols-2 gap-3">
+                         <div>
+                           <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Risk Amount</Label>
+                           <Input
+                             type="number"
+                             step="0.01"
+                             value={editableRiskAmount}
+                             onChange={(e) => handleRiskAmountChange(e.target.value)}
+                             className="mt-1 bg-transparent border-border/30 focus:border-foreground/30 focus:ring-foreground/10 font-mono text-sm h-8"
+                           />
+                         </div>
+                         <div>
+                           <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Pip Value</Label>
+                           <div className="mt-1 p-2 bg-muted/30 border border-border/30 rounded-md font-mono text-sm h-8 flex items-center">
+                             ${calculation.pipValue.toFixed(2)}
+                           </div>
+                         </div>
+                         <div>
+                           <Label className="text-xs font-light text-foreground uppercase tracking-wider">Lot Size</Label>
+                           <div className="mt-1 p-2 bg-accent/20 border border-border/50 rounded-md font-mono text-sm text-foreground h-8 flex items-center">
+                             {calculation.lotSize.toFixed(2)}
+                           </div>
+                         </div>
+                         <div>
+                           <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Expected Profit</Label>
+                           <div className="mt-1 p-2 bg-success/10 border border-success/30 rounded-md font-mono text-sm text-success h-8 flex items-center">
+                             ${calculation.expectedProfit.toFixed(2)}
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
 
-                  <div className="bg-gradient-card border border-border/50 rounded-lg p-6 backdrop-blur-sm">
-                    <div className="mb-6">
-                      <h2 className="text-lg font-light text-foreground mb-2 flex items-center gap-2">
-                        <Target className="h-4 w-4" />
-                        LEVELS
-                      </h2>
-                      <div className="w-12 h-px bg-border"></div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="space-y-3">
+                   <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                     <div className="mb-3">
+                       <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
+                         <Target className="h-3 w-3" />
+                         LEVELS
+                       </h2>
+                       <div className="w-8 h-px bg-border"></div>
+                     </div>
+                     <div className="space-y-3">
+                       <div className="space-y-2">
                         <div className="flex items-center justify-between p-4 bg-danger/5 border border-danger/20 rounded-lg backdrop-blur-sm">
                           <div className="flex-1 mr-4">
                             <Label className="text-xs font-light text-danger uppercase tracking-wider">Stop Loss</Label>
@@ -636,11 +636,11 @@ const PriceCalculator = () => {
               )}
 
               {!calculation && (
-                <div className="bg-gradient-card border border-border/50 rounded-lg p-12 backdrop-blur-sm">
-                  <div className="flex items-center justify-center h-48 text-muted-foreground">
+                <div className="bg-gradient-card border border-border/50 rounded-lg p-8 backdrop-blur-sm">
+                  <div className="flex items-center justify-center h-32 text-muted-foreground">
                     <div className="text-center">
-                      <Calculator className="h-16 w-16 mx-auto mb-6 opacity-30" />
-                      <p className="font-light tracking-wide">Awaiting parameters...</p>
+                      <Calculator className="h-12 w-12 mx-auto mb-4 opacity-30" />
+                      <p className="font-light tracking-wide text-sm">Awaiting parameters...</p>
                     </div>
                   </div>
                 </div>
