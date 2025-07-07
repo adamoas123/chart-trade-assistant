@@ -279,7 +279,7 @@ const PriceCalculator = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
-            <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+            <div className="bg-gradient-card border border-border/50 rounded-lg p-4">
               <div className="mb-4">
                 <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
                   <Shield className="h-3 w-3" />
@@ -452,7 +452,7 @@ const PriceCalculator = () => {
 
                 {/* TP Levels Table */}
                 {calculation && (
-                  <div className="mt-4 bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                  <div className="mt-4 bg-gradient-card border border-border/50 rounded-lg p-4">
                     <div className="mb-3">
                       <h3 className="text-xs font-light text-foreground mb-1 flex items-center gap-2 uppercase tracking-wider">
                         <Target className="h-3 w-3" />
@@ -509,7 +509,7 @@ const PriceCalculator = () => {
             <div className="space-y-6">
               {calculation && (
                  <>
-                   <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                    <div className="bg-gradient-card border border-border/50 rounded-lg p-4">
                      <div className="mb-3">
                        <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
                          <DollarSign className="h-3 w-3" />
@@ -551,7 +551,7 @@ const PriceCalculator = () => {
                      </div>
                    </div>
 
-                   <div className="bg-gradient-card border border-border/50 rounded-lg p-4 backdrop-blur-sm">
+                   <div className="bg-gradient-card border border-border/50 rounded-lg p-4">
                      <div className="mb-3">
                        <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
                          <Target className="h-3 w-3" />
@@ -561,7 +561,7 @@ const PriceCalculator = () => {
                      </div>
                      <div className="space-y-3">
                        <div className="space-y-2">
-                        <div className="flex items-center justify-between p-4 bg-danger/5 border border-danger/20 rounded-lg backdrop-blur-sm">
+                        <div className="flex items-center justify-between p-4 bg-danger/5 border border-danger/20 rounded-lg">
                           <div className="flex-1 mr-4">
                             <Label className="text-xs font-light text-danger uppercase tracking-wider">Stop Loss</Label>
                             <Input
@@ -581,7 +581,7 @@ const PriceCalculator = () => {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between p-4 bg-muted/10 border border-border/20 rounded-lg backdrop-blur-sm">
+                        <div className="flex items-center justify-between p-4 bg-muted/10 border border-border/20 rounded-lg">
                           <div>
                             <Label className="text-xs font-light text-muted-foreground uppercase tracking-wider">Breakeven</Label>
                             <div className="font-mono text-xl text-foreground mt-1">{calculation.breakevenPrice.toFixed(5)}</div>
@@ -594,7 +594,7 @@ const PriceCalculator = () => {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between p-4 bg-success/5 border border-success/20 rounded-lg backdrop-blur-sm">
+                        <div className="flex items-center justify-between p-4 bg-success/5 border border-success/20 rounded-lg">
                           <div className="flex-1 mr-4">
                             <Label className="text-xs font-light text-success uppercase tracking-wider">Take Profit</Label>
                             <Input
@@ -636,7 +636,7 @@ const PriceCalculator = () => {
               )}
 
               {!calculation && (
-                <div className="bg-gradient-card border border-border/50 rounded-lg p-8 backdrop-blur-sm">
+                <div className="bg-gradient-card border border-border/50 rounded-lg p-8">
                   <div className="flex items-center justify-center h-32 text-muted-foreground">
                     <div className="text-center">
                       <Calculator className="h-12 w-12 mx-auto mb-4 opacity-30" />
