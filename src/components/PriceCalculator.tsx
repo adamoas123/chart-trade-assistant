@@ -702,14 +702,18 @@ const PriceCalculator = () => {
                             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-pink-300 rounded-full"></div>
                           </div>
                           
-                          {/* Sharp Teeth */}
-                          <div className="absolute top-1 left-3 w-0 h-0 border-l-2 border-r-2 border-b-4 border-transparent border-b-white animate-pulse"></div>
-                          <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-b-5 border-transparent border-b-white animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="absolute top-1 right-3 w-0 h-0 border-l-2 border-r-2 border-b-4 border-transparent border-b-white animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          {/* Sharp Teeth - Top Row */}
+                          <div className="absolute top-0 left-4 w-0 h-0 border-l-4 border-r-4 border-b-8 border-transparent border-b-white drop-shadow-sm"></div>
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-5 border-r-5 border-b-10 border-transparent border-b-white drop-shadow-sm" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="absolute top-0 right-4 w-0 h-0 border-l-4 border-r-4 border-b-8 border-transparent border-b-white drop-shadow-sm" style={{ animationDelay: '0.4s' }}></div>
                           
-                          {/* Bottom teeth */}
-                          <div className="absolute bottom-1 left-4 w-0 h-0 border-l-1 border-r-1 border-t-3 border-transparent border-t-white/90"></div>
-                          <div className="absolute bottom-1 right-4 w-0 h-0 border-l-1 border-r-1 border-t-3 border-transparent border-t-white/90"></div>
+                          {/* Sharp Teeth - Bottom Row */}
+                          <div className="absolute bottom-0 left-6 w-0 h-0 border-l-3 border-r-3 border-t-6 border-transparent border-t-white/95 drop-shadow-sm"></div>
+                          <div className="absolute bottom-0 right-6 w-0 h-0 border-l-3 border-r-3 border-t-6 border-transparent border-t-white/95 drop-shadow-sm"></div>
+                          
+                          {/* Additional side fangs for more menacing look */}
+                          <div className="absolute top-2 left-1 w-0 h-0 border-l-2 border-r-2 border-b-6 border-transparent border-b-yellow-100 transform rotate-12"></div>
+                          <div className="absolute top-2 right-1 w-0 h-0 border-l-2 border-r-2 border-b-6 border-transparent border-b-yellow-100 transform -rotate-12"></div>
                         </div>
                         
                         {/* Drool animation */}
