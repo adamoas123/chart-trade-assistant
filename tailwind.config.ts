@@ -113,6 +113,45 @@ export default {
 						transform: 'translateX(30%) translateY(-50%)' 
 					}
 				},
+				'mouth-hungry': {
+					'0%, 100%': { 
+						transform: 'scaleY(0.8) scaleX(1.0)',
+						borderColor: 'rgba(127, 29, 29, 0.6)'
+					},
+					'50%': { 
+						transform: 'scaleY(1.1) scaleX(1.05)',
+						borderColor: 'rgba(220, 38, 38, 0.8)'
+					}
+				},
+				'tongue-wiggle': {
+					'0%, 100%': { 
+						transform: 'translateX(-50%) translateY(0) rotate(-2deg)'
+					},
+					'33%': { 
+						transform: 'translateX(-50%) translateY(2px) rotate(1deg)'
+					},
+					'66%': { 
+						transform: 'translateX(-50%) translateY(-1px) rotate(-1deg)'
+					}
+				},
+				'drool-drop': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateX(-50%) scaleY(0)'
+					},
+					'30%': { 
+						opacity: '0.6',
+						transform: 'translateX(-50%) scaleY(0.5)'
+					},
+					'70%': { 
+						opacity: '0.8',
+						transform: 'translateX(-50%) scaleY(1)'
+					},
+					'100%': { 
+						opacity: '0',
+						transform: 'translateX(-50%) scaleY(1.2) translateY(10px)'
+					}
+				},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -132,6 +171,9 @@ export default {
 			},
 			animation: {
 				'slide-left-right': 'slide-left-right 2s ease-in-out infinite',
+				'mouth-hungry': 'mouth-hungry 1.5s ease-in-out infinite',
+				'tongue-wiggle': 'tongue-wiggle 1s ease-in-out infinite',
+				'drool-drop': 'drool-drop 2s ease-in-out infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}

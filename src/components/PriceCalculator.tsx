@@ -689,6 +689,33 @@ const PriceCalculator = () => {
                           </div>
                         </div>
                       </div>
+                      
+                      {/* Hungry Mouth with Sharp Teeth and Tongue */}
+                      <div className="relative w-24 h-16 mx-auto mb-4">
+                        {/* Mouth opening */}
+                        <div className="absolute inset-0 bg-red-900/80 rounded-full border-2 border-red-700/60 animate-[mouth-hungry_1.5s_ease-in-out_infinite] overflow-hidden">
+                          {/* Inner mouth darkness */}
+                          <div className="absolute inset-1 bg-black/60 rounded-full"></div>
+                          
+                          {/* Animated Tongue */}
+                          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-6 bg-pink-400 rounded-t-full animate-[tongue-wiggle_1s_ease-in-out_infinite] border border-pink-300">
+                            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-pink-300 rounded-full"></div>
+                          </div>
+                          
+                          {/* Sharp Teeth */}
+                          <div className="absolute top-1 left-3 w-0 h-0 border-l-2 border-r-2 border-b-4 border-transparent border-b-white animate-pulse"></div>
+                          <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-b-5 border-transparent border-b-white animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="absolute top-1 right-3 w-0 h-0 border-l-2 border-r-2 border-b-4 border-transparent border-b-white animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          
+                          {/* Bottom teeth */}
+                          <div className="absolute bottom-1 left-4 w-0 h-0 border-l-1 border-r-1 border-t-3 border-transparent border-t-white/90"></div>
+                          <div className="absolute bottom-1 right-4 w-0 h-0 border-l-1 border-r-1 border-t-3 border-transparent border-t-white/90"></div>
+                        </div>
+                        
+                        {/* Drool animation */}
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-gradient-to-b from-transparent via-blue-200/40 to-blue-300/60 rounded-full animate-[drool-drop_2s_ease-in-out_infinite]"></div>
+                      </div>
+                      
                       <p className="font-light tracking-wide text-sm opacity-60">Awaiting parameters...</p>
                     </div>
                   </div>
