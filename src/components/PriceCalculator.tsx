@@ -673,8 +673,23 @@ const PriceCalculator = () => {
                 <div className="bg-gradient-card border border-border/50 rounded-lg p-8">
                   <div className="flex items-center justify-center h-32 text-muted-foreground">
                     <div className="text-center">
-                      <Calculator className="h-12 w-12 mx-auto mb-4 opacity-30" />
-                      <p className="font-light tracking-wide text-sm">Awaiting parameters...</p>
+                      {/* Animated Eyes Looking Left and Right */}
+                      <div className="flex items-center justify-center gap-4 mb-4">
+                        {/* Left Eye */}
+                        <div className="relative w-16 h-12 bg-foreground/10 rounded-full border border-foreground/20">
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-foreground/30 rounded-full transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground/60 rounded-full"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Right Eye */}
+                        <div className="relative w-16 h-12 bg-foreground/10 rounded-full border border-foreground/20">
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-foreground/30 rounded-full transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground/60 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="font-light tracking-wide text-sm opacity-60">Awaiting parameters...</p>
                     </div>
                   </div>
                 </div>
