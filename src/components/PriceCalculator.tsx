@@ -264,8 +264,42 @@ const PriceCalculator = () => {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-background p-4">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen bg-background p-4 relative overflow-hidden">
+        {/* Background Eyes */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          {/* Left Eye - Looking Up */}
+          <div className="absolute top-20 left-16 opacity-10">
+            <div className="relative w-12 h-8 bg-foreground/20 rounded-full">
+              <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-foreground/30 rounded-full animate-pulse">
+                <div className="absolute top-0.5 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground/60 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Eye - Looking Down */}
+          <div className="absolute bottom-32 right-20 opacity-10">
+            <div className="relative w-12 h-8 bg-foreground/20 rounded-full">
+              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-foreground/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}>
+                <div className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground/60 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Additional smaller eyes for ambiance */}
+          <div className="absolute top-1/3 right-8 opacity-5">
+            <div className="relative w-8 h-6 bg-foreground/20 rounded-full">
+              <div className="absolute top-0.5 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-foreground/30 rounded-full"></div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-1/4 left-8 opacity-5">
+            <div className="relative w-8 h-6 bg-foreground/20 rounded-full">
+              <div className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-foreground/30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-light mb-4 flex items-center justify-center gap-3 text-foreground">
               <Calculator className="h-7 w-7" />
