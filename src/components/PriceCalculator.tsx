@@ -736,65 +736,57 @@ const PriceCalculator = () => {
                         </div>
                       </div>
                       
-                      {/* Realistic Hungry Mouth with Detailed Teeth */}
-                      <div className="relative w-32 h-20 mx-auto mb-4">
-                        {/* Mouth opening with lips */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-red-800 via-red-900 to-black rounded-full border-2 border-red-700 shadow-2xl overflow-hidden animate-[mouth-hungry_1.5s_ease-in-out_infinite]">
+                      {/* Realistic Nose */}
+                      <div className="relative w-12 h-8 mx-auto mb-3">
+                        {/* Nose bridge and structure */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-red-400/40 via-red-500/60 to-red-600/80 rounded-lg shadow-lg transform perspective-500 rotate-x-12">
+                          {/* Nose tip highlight */}
+                          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-3 bg-gradient-to-b from-red-300/60 to-red-400/80 rounded-lg"></div>
                           
-                          {/* Upper Lip */}
-                          <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-b from-red-600 to-red-800 rounded-t-full border-b border-red-900"></div>
+                          {/* Nostrils */}
+                          <div className="absolute bottom-0 left-2 w-2 h-2 bg-black/80 rounded-full transform rotate-12 shadow-inner"></div>
+                          <div className="absolute bottom-0 right-2 w-2 h-2 bg-black/80 rounded-full transform -rotate-12 shadow-inner"></div>
                           
-                          {/* Lower Lip */}
-                          <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-t from-red-600 to-red-800 rounded-b-full border-t border-red-900"></div>
+                          {/* Nostril inner details */}
+                          <div className="absolute bottom-0.5 left-2.5 w-1 h-1 bg-red-800/60 rounded-full"></div>
+                          <div className="absolute bottom-0.5 right-2.5 w-1 h-1 bg-red-800/60 rounded-full"></div>
                           
-                          {/* Inner mouth darkness with gradient */}
-                          <div className="absolute inset-2 bg-gradient-to-b from-black via-red-950 to-black rounded-full"></div>
+                          {/* Nose bridge shadow */}
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-6 bg-red-600/30 rounded-full blur-sm"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Realistic Angry Closed Mouth */}
+                      <div className="relative w-24 h-6 mx-auto mb-4">
+                        {/* Angry frown mouth closed */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-red-600 to-red-800 rounded-lg border-2 border-red-700 shadow-lg overflow-hidden">
                           
-                          {/* Realistic Upper Teeth Row */}
-                          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-                            {/* Central Incisors */}
-                            <div className="w-2.5 h-4 bg-gradient-to-b from-white via-gray-100 to-gray-200 rounded-b-lg border border-gray-300 shadow-sm"></div>
-                            <div className="w-2.5 h-4 bg-gradient-to-b from-white via-gray-100 to-gray-200 rounded-b-lg border border-gray-300 shadow-sm"></div>
-                            
-                            {/* Lateral Incisors */}
-                            <div className="w-2 h-3.5 bg-gradient-to-b from-white via-gray-100 to-gray-200 rounded-b-lg border border-gray-300 shadow-sm transform rotate-2"></div>
-                            <div className="w-2 h-3.5 bg-gradient-to-b from-white via-gray-100 to-gray-200 rounded-b-lg border border-gray-300 shadow-sm transform -rotate-2"></div>
-                            
-                            {/* Canines (Fangs) */}
-                            <div className="w-2 h-5 bg-gradient-to-b from-yellow-50 via-white to-gray-200 rounded-b-lg border border-gray-300 shadow-md transform rotate-6"></div>
-                            <div className="w-2 h-5 bg-gradient-to-b from-yellow-50 via-white to-gray-200 rounded-b-lg border border-gray-300 shadow-md transform -rotate-6"></div>
-                          </div>
+                          {/* Upper Lip - pressed down angrily */}
+                          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-red-500 to-red-700 rounded-t-lg border-b border-red-800"></div>
                           
-                          {/* Realistic Lower Teeth Row */}
-                          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-                            {/* Lower Incisors */}
-                            <div className="w-2 h-3 bg-gradient-to-t from-white via-gray-100 to-gray-200 rounded-t-lg border border-gray-300 shadow-sm"></div>
-                            <div className="w-2 h-3 bg-gradient-to-t from-white via-gray-100 to-gray-200 rounded-t-lg border border-gray-300 shadow-sm"></div>
-                            <div className="w-2 h-3 bg-gradient-to-t from-white via-gray-100 to-gray-200 rounded-t-lg border border-gray-300 shadow-sm"></div>
-                            <div className="w-2 h-3 bg-gradient-to-t from-white via-gray-100 to-gray-200 rounded-t-lg border border-gray-300 shadow-sm"></div>
-                            
-                            {/* Lower Canines */}
-                            <div className="w-1.5 h-3.5 bg-gradient-to-t from-yellow-50 via-white to-gray-200 rounded-t-lg border border-gray-300 shadow-sm transform rotate-3"></div>
-                            <div className="w-1.5 h-3.5 bg-gradient-to-t from-yellow-50 via-white to-gray-200 rounded-t-lg border border-gray-300 shadow-sm transform -rotate-3"></div>
-                          </div>
+                          {/* Lower Lip - pressed up angrily */}
+                          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-red-500 to-red-700 rounded-b-lg border-t border-red-800"></div>
                           
-                          {/* Animated Tongue with realistic texture */}
-                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-10 h-8 bg-gradient-to-t from-pink-400 via-pink-300 to-pink-200 rounded-t-full animate-[tongue-wiggle_1s_ease-in-out_infinite] border border-pink-300 shadow-inner">
-                            {/* Tongue texture lines */}
-                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 h-px bg-pink-400/40 rounded-full"></div>
-                            <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-4 h-px bg-pink-400/30 rounded-full"></div>
-                            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-2 h-4 bg-pink-300/50 rounded-full"></div>
-                          </div>
+                          {/* Mouth line - tight angry line */}
+                          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-red-900 transform -translate-y-1/2"></div>
                           
-                          {/* Side Molars */}
-                          <div className="absolute top-4 left-2 w-1.5 h-2.5 bg-gradient-to-b from-white to-gray-200 rounded border border-gray-300 transform rotate-12 shadow-sm"></div>
-                          <div className="absolute top-4 right-2 w-1.5 h-2.5 bg-gradient-to-b from-white to-gray-200 rounded border border-gray-300 transform -rotate-12 shadow-sm"></div>
-                          <div className="absolute bottom-4 left-2 w-1.5 h-2 bg-gradient-to-t from-white to-gray-200 rounded border border-gray-300 transform rotate-8 shadow-sm"></div>
-                          <div className="absolute bottom-4 right-2 w-1.5 h-2 bg-gradient-to-t from-white to-gray-200 rounded border border-gray-300 transform -rotate-8 shadow-sm"></div>
+                          {/* Corner shadows for angry expression */}
+                          <div className="absolute top-0 left-0 w-2 h-full bg-red-800/50 rounded-l-lg"></div>
+                          <div className="absolute top-0 right-0 w-2 h-full bg-red-800/50 rounded-r-lg"></div>
+                          
+                          {/* Angry mouth corners turning down */}
+                          <div className="absolute top-2 left-0 w-3 h-2 bg-red-700 transform -rotate-45 rounded-tl-lg"></div>
+                          <div className="absolute top-2 right-0 w-3 h-2 bg-red-700 transform rotate-45 rounded-tr-lg"></div>
+                          
+                          {/* Subtle teeth line when mouth is closed */}
+                          <div className="absolute top-1/2 left-1/4 right-1/4 h-px bg-white/20 transform -translate-y-1/2"></div>
                         </div>
                         
-                        {/* Realistic drool with opacity gradient */}
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-10 bg-gradient-to-b from-transparent via-blue-200/60 to-blue-300/80 rounded-full animate-[drool-drop_2s_ease-in-out_infinite] shadow-sm"></div>
+                        {/* Mouth wrinkles around angry mouth */}
+                        <div className="absolute -top-1 left-2 w-8 h-px bg-red-600/40 transform rotate-12"></div>
+                        <div className="absolute -top-1 right-2 w-8 h-px bg-red-600/40 transform -rotate-12"></div>
+                        <div className="absolute -bottom-1 left-2 w-8 h-px bg-red-600/40 transform -rotate-12"></div>
+                        <div className="absolute -bottom-1 right-2 w-8 h-px bg-red-600/40 transform rotate-12"></div>
                       </div>
                       
                       <p className="font-light tracking-wide text-sm opacity-60">Awaiting parameters...</p>
