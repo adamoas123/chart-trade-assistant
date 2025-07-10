@@ -789,64 +789,64 @@ const PriceCalculator = () => {
                         <div className="absolute -bottom-1 right-2 w-8 h-px bg-red-600/40 transform rotate-12"></div>
                       </div>
                       
-                      {/* Realistic White Goat Beard */}
-                      <div className="relative w-16 h-12 mx-auto mb-4">
+                      {/* Realistic Black & White Goat Beard */}
+                      <div className="relative w-10 h-8 mx-auto mb-4">
                         {/* Main beard shape */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-gray-100 rounded-b-full border border-gray-200 shadow-lg overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-200 via-gray-400 to-black rounded-b-full border border-gray-600 shadow-lg overflow-hidden">
                           
                           {/* Beard texture with individual hair strands */}
                           <div className="absolute inset-0">
-                            {/* Main hair flow lines */}
-                            <div className="absolute top-0 left-2 w-px h-8 bg-gray-300/60 transform rotate-12"></div>
-                            <div className="absolute top-0 left-4 w-px h-10 bg-gray-300/70 transform rotate-6"></div>
-                            <div className="absolute top-0 left-6 w-px h-9 bg-gray-300/60 transform -rotate-3"></div>
-                            <div className="absolute top-0 left-8 w-px h-11 bg-gray-300/80"></div>
-                            <div className="absolute top-0 left-10 w-px h-9 bg-gray-300/60 transform rotate-3"></div>
-                            <div className="absolute top-0 left-12 w-px h-10 bg-gray-300/70 transform -rotate-6"></div>
-                            <div className="absolute top-0 right-2 w-px h-8 bg-gray-300/60 transform -rotate-12"></div>
+                            {/* Main hair flow lines - black and white mix */}
+                            <div className="absolute top-0 left-1 w-px h-5 bg-black/80 transform rotate-12"></div>
+                            <div className="absolute top-0 left-2 w-px h-6 bg-white/70 transform rotate-6"></div>
+                            <div className="absolute top-0 left-3 w-px h-5 bg-gray-800/70 transform -rotate-3"></div>
+                            <div className="absolute top-0 left-4 w-px h-7 bg-black/90"></div>
+                            <div className="absolute top-0 left-5 w-px h-5 bg-gray-300/80 transform rotate-3"></div>
+                            <div className="absolute top-0 left-6 w-px h-6 bg-black/60 transform -rotate-6"></div>
+                            <div className="absolute top-0 right-1 w-px h-5 bg-gray-700/70 transform -rotate-12"></div>
                             
-                            {/* Secondary hair strands */}
-                            <div className="absolute top-1 left-3 w-px h-7 bg-gray-400/40 transform rotate-8"></div>
-                            <div className="absolute top-1 left-5 w-px h-8 bg-gray-400/50 transform rotate-2"></div>
-                            <div className="absolute top-1 left-7 w-px h-9 bg-gray-400/60 transform -rotate-1"></div>
-                            <div className="absolute top-1 left-9 w-px h-8 bg-gray-400/50 transform rotate-4"></div>
-                            <div className="absolute top-1 left-11 w-px h-7 bg-gray-400/40 transform -rotate-8"></div>
+                            {/* Secondary hair strands - alternating colors */}
+                            <div className="absolute top-0.5 left-1.5 w-px h-4 bg-white/50 transform rotate-8"></div>
+                            <div className="absolute top-0.5 left-2.5 w-px h-5 bg-black/60 transform rotate-2"></div>
+                            <div className="absolute top-0.5 left-3.5 w-px h-6 bg-gray-600/70 transform -rotate-1"></div>
+                            <div className="absolute top-0.5 left-4.5 w-px h-5 bg-white/40 transform rotate-4"></div>
+                            <div className="absolute top-0.5 left-5.5 w-px h-4 bg-black/70 transform -rotate-8"></div>
                             
                             {/* Fine hair details */}
-                            <div className="absolute top-2 left-1 w-2 h-px bg-gray-300/30 transform rotate-45"></div>
-                            <div className="absolute top-3 left-2 w-3 h-px bg-gray-300/40 transform -rotate-30"></div>
-                            <div className="absolute top-4 left-1 w-2 h-px bg-gray-300/35 transform rotate-60"></div>
-                            <div className="absolute top-2 right-1 w-2 h-px bg-gray-300/30 transform -rotate-45"></div>
-                            <div className="absolute top-3 right-2 w-3 h-px bg-gray-300/40 transform rotate-30"></div>
-                            <div className="absolute top-4 right-1 w-2 h-px bg-gray-300/35 transform -rotate-60"></div>
+                            <div className="absolute top-1 left-0 w-1 h-px bg-gray-800/40 transform rotate-45"></div>
+                            <div className="absolute top-2 left-1 w-2 h-px bg-white/50 transform -rotate-30"></div>
+                            <div className="absolute top-2.5 left-0 w-1 h-px bg-black/60 transform rotate-60"></div>
+                            <div className="absolute top-1 right-0 w-1 h-px bg-gray-700/50 transform -rotate-45"></div>
+                            <div className="absolute top-2 right-1 w-2 h-px bg-white/40 transform rotate-30"></div>
+                            <div className="absolute top-2.5 right-0 w-1 h-px bg-black/70 transform -rotate-60"></div>
                           </div>
                           
-                          {/* Beard highlight on left side */}
-                          <div className="absolute top-1 left-1 w-3 h-8 bg-gradient-to-b from-white/80 to-transparent rounded-l-full blur-sm"></div>
+                          {/* Beard highlight on left side - white */}
+                          <div className="absolute top-0.5 left-0 w-2 h-5 bg-gradient-to-b from-white/90 to-transparent rounded-l-full blur-sm"></div>
                           
-                          {/* Beard shadow on right side */}
-                          <div className="absolute top-2 right-1 w-2 h-6 bg-gradient-to-b from-gray-400/20 to-gray-500/30 rounded-r-full blur-sm"></div>
+                          {/* Beard shadow on right side - black */}
+                          <div className="absolute top-1 right-0 w-1.5 h-4 bg-gradient-to-b from-black/30 to-black/60 rounded-r-full blur-sm"></div>
                           
                           {/* Beard tip point */}
-                          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-gradient-to-b from-gray-100 to-gray-200 rounded-b-lg border-x border-gray-300">
+                          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-3 bg-gradient-to-b from-gray-500 to-black rounded-b-lg border-x border-gray-700">
                             {/* Tip hair strands */}
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-4 bg-gray-400/70"></div>
-                            <div className="absolute top-1 left-0 w-px h-3 bg-gray-400/50 transform rotate-12"></div>
-                            <div className="absolute top-1 right-0 w-px h-3 bg-gray-400/50 transform -rotate-12"></div>
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-3 bg-black/80"></div>
+                            <div className="absolute top-0.5 left-0 w-px h-2 bg-white/60 transform rotate-12"></div>
+                            <div className="absolute top-0.5 right-0 w-px h-2 bg-gray-800/70 transform -rotate-12"></div>
                           </div>
                           
                           {/* Wispy hair at edges */}
-                          <div className="absolute top-2 -left-1 w-1 h-4 bg-white/60 rounded-full transform rotate-45 blur-sm"></div>
-                          <div className="absolute top-3 -left-2 w-1 h-3 bg-white/40 rounded-full transform rotate-60 blur-sm"></div>
-                          <div className="absolute top-2 -right-1 w-1 h-4 bg-white/60 rounded-full transform -rotate-45 blur-sm"></div>
-                          <div className="absolute top-3 -right-2 w-1 h-3 bg-white/40 rounded-full transform -rotate-60 blur-sm"></div>
+                          <div className="absolute top-1 -left-0.5 w-0.5 h-3 bg-white/70 rounded-full transform rotate-45 blur-sm"></div>
+                          <div className="absolute top-1.5 -left-1 w-0.5 h-2 bg-black/50 rounded-full transform rotate-60 blur-sm"></div>
+                          <div className="absolute top-1 -right-0.5 w-0.5 h-3 bg-gray-600/60 rounded-full transform -rotate-45 blur-sm"></div>
+                          <div className="absolute top-1.5 -right-1 w-0.5 h-2 bg-white/40 rounded-full transform -rotate-60 blur-sm"></div>
                           
                           {/* Subtle animated sway */}
                           <div className="absolute inset-0 animate-[beard-sway_4s_ease-in-out_infinite]"></div>
                         </div>
                         
                         {/* Chin connection shadow */}
-                        <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-8 h-2 bg-red-600/20 rounded-full blur-sm"></div>
+                        <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-5 h-1.5 bg-red-600/20 rounded-full blur-sm"></div>
                       </div>
                       <p className="font-light tracking-wide text-sm opacity-60">Awaiting parameters...</p>
                     </div>
