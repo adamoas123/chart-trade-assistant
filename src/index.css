@@ -135,3 +135,68 @@ All colors MUST be HSL.
     transform: translateZ(0);
   }
 }
+
+/* Custom eye movement animations */
+@keyframes eye-search {
+  0% { transform: translate(-50%, -50%) translateX(0px); }
+  15% { transform: translate(-50%, -50%) translateX(-3px); }
+  25% { transform: translate(-50%, -50%) translateX(-3px); }
+  35% { transform: translate(-50%, -50%) translateX(4px); }
+  45% { transform: translate(-50%, -50%) translateX(4px); }
+  55% { transform: translate(-50%, -50%) translateX(-2px); }
+  65% { transform: translate(-50%, -50%) translateX(-2px); }
+  75% { transform: translate(-50%, -50%) translateX(3px); }
+  85% { transform: translate(-50%, -50%) translateX(0px); }
+  100% { transform: translate(-50%, -50%) translateX(0px); }
+}
+
+@keyframes eye-search-opposite {
+  0% { transform: translate(-50%, -50%) translateX(0px); }
+  10% { transform: translate(-50%, -50%) translateX(4px); }
+  20% { transform: translate(-50%, -50%) translateX(4px); }
+  35% { transform: translate(-50%, -50%) translateX(-3px); }
+  50% { transform: translate(-50%, -50%) translateX(-3px); }
+  60% { transform: translate(-50%, -50%) translateX(2px); }
+  70% { transform: translate(-50%, -50%) translateX(2px); }
+  80% { transform: translate(-50%, -50%) translateX(-4px); }
+  90% { transform: translate(-50%, -50%) translateX(0px); }
+  100% { transform: translate(-50%, -50%) translateX(0px); }
+}
+
+@keyframes eyelid-blink {
+  0%, 90%, 100% { transform: scaleY(0); }
+  93%, 97% { transform: scaleY(1); }
+}
+
+@keyframes eye-blink {
+  0%, 90%, 100% { height: 3.5rem; }
+  93%, 97% { height: 0.2rem; }
+}
+
+@keyframes eyebrow-twitch {
+  0%, 95%, 100% { transform: rotate(-12deg); }
+  85%, 90% { transform: rotate(-8deg); }
+}
+
+@keyframes slide-left-right {
+  0%, 100% { transform: translate(-50%, -50%) translateX(0px); }
+  25% { transform: translate(-50%, -50%) translateX(-3px); }
+  75% { transform: translate(-50%, -50%) translateX(3px); }
+}
+
+@keyframes mouth-hungry {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.2); }
+}
+
+@keyframes tongue-wiggle {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(-2deg); }
+  75% { transform: translateX(-50%) rotate(2deg); }
+}
+
+@keyframes drool-drop {
+  0% { height: 2.5rem; opacity: 0.8; }
+  50% { height: 3rem; opacity: 1; }
+  100% { height: 2.5rem; opacity: 0.8; }
+}

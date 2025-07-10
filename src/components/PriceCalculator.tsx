@@ -673,14 +673,14 @@ const PriceCalculator = () => {
                 <div className="bg-gradient-card border border-border/50 rounded-lg p-8">
                   <div className="flex items-center justify-center h-32 text-muted-foreground">
                     <div className="text-center">
-                      {/* Realistic Angry Red Eyes */}
+                      {/* Realistic Searching Eyes with Random Movement */}
                       <div className="flex items-center justify-center gap-6 mb-4 relative">
                         {/* Angry Eyebrows */}
-                        <div className="absolute -top-2 left-8 w-12 h-2 bg-red-800 transform -rotate-12 rounded-sm shadow-lg"></div>
-                        <div className="absolute -top-2 right-8 w-12 h-2 bg-red-800 transform rotate-12 rounded-sm shadow-lg"></div>
+                        <div className="absolute -top-2 left-8 w-12 h-2 bg-red-800 transform -rotate-12 rounded-sm shadow-lg animate-[eyebrow-twitch_3s_ease-in-out_infinite]"></div>
+                        <div className="absolute -top-2 right-8 w-12 h-2 bg-red-800 transform rotate-12 rounded-sm shadow-lg animate-[eyebrow-twitch_3s_ease-in-out_infinite] delay-500"></div>
                         
                         {/* Left Eye */}
-                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden">
+                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden animate-[eye-blink_4s_ease-in-out_infinite]">
                           {/* Bloodshot veins */}
                           <div className="absolute inset-0">
                             <div className="absolute top-2 left-3 w-8 h-px bg-red-400/60 transform rotate-12"></div>
@@ -689,8 +689,8 @@ const PriceCalculator = () => {
                             <div className="absolute top-1 left-1/2 w-4 h-px bg-red-300/70 transform -rotate-45"></div>
                           </div>
                           
-                          {/* Iris */}
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                          {/* Iris with realistic random movement */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 animate-[eye-search_5s_ease-in-out_infinite]">
                             {/* Inner iris details */}
                             <div className="absolute inset-1 bg-gradient-to-br from-red-300/30 to-transparent rounded-full"></div>
                             {/* Pupil */}
@@ -702,10 +702,13 @@ const PriceCalculator = () => {
                           
                           {/* Eye highlights */}
                           <div className="absolute top-1 right-2 w-2 h-1 bg-white/20 rounded-full blur-sm"></div>
+                          
+                          {/* Eyelid for blinking */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-red-800 to-red-900 rounded-full transform origin-top animate-[eyelid-blink_6s_ease-in-out_infinite] scale-y-0"></div>
                         </div>
                         
                         {/* Right Eye */}
-                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden">
+                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden animate-[eye-blink_4s_ease-in-out_infinite] delay-700">
                           {/* Bloodshot veins */}
                           <div className="absolute inset-0">
                             <div className="absolute top-2 right-3 w-8 h-px bg-red-400/60 transform -rotate-12"></div>
@@ -714,8 +717,8 @@ const PriceCalculator = () => {
                             <div className="absolute top-1 right-1/2 w-4 h-px bg-red-300/70 transform rotate-45"></div>
                           </div>
                           
-                          {/* Iris */}
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                          {/* Iris with realistic random movement */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 animate-[eye-search-opposite_5s_ease-in-out_infinite] delay-1000">
                             {/* Inner iris details */}
                             <div className="absolute inset-1 bg-gradient-to-br from-red-300/30 to-transparent rounded-full"></div>
                             {/* Pupil */}
@@ -727,6 +730,9 @@ const PriceCalculator = () => {
                           
                           {/* Eye highlights */}
                           <div className="absolute top-1 left-2 w-2 h-1 bg-white/20 rounded-full blur-sm"></div>
+                          
+                          {/* Eyelid for blinking */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-red-800 to-red-900 rounded-full transform origin-top animate-[eyelid-blink_6s_ease-in-out_infinite] delay-1500 scale-y-0"></div>
                         </div>
                       </div>
                       
