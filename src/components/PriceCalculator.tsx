@@ -673,20 +673,60 @@ const PriceCalculator = () => {
                 <div className="bg-gradient-card border border-border/50 rounded-lg p-8">
                   <div className="flex items-center justify-center h-32 text-muted-foreground">
                     <div className="text-center">
-                      {/* Animated Eyes Looking Left and Right */}
-                      <div className="flex items-center justify-center gap-4 mb-4">
+                      {/* Realistic Angry Red Eyes */}
+                      <div className="flex items-center justify-center gap-6 mb-4 relative">
+                        {/* Angry Eyebrows */}
+                        <div className="absolute -top-2 left-8 w-12 h-2 bg-red-800 transform -rotate-12 rounded-sm shadow-lg"></div>
+                        <div className="absolute -top-2 right-8 w-12 h-2 bg-red-800 transform rotate-12 rounded-sm shadow-lg"></div>
+                        
                         {/* Left Eye */}
-                        <div className="relative w-16 h-12 bg-red-500 rounded-full border border-foreground/20">
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-foreground/30 rounded-full transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground/60 rounded-full"></div>
+                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden">
+                          {/* Bloodshot veins */}
+                          <div className="absolute inset-0">
+                            <div className="absolute top-2 left-3 w-8 h-px bg-red-400/60 transform rotate-12"></div>
+                            <div className="absolute top-4 right-2 w-6 h-px bg-red-400/40 transform -rotate-12"></div>
+                            <div className="absolute bottom-3 left-4 w-5 h-px bg-red-400/50 transform rotate-45"></div>
+                            <div className="absolute top-1 left-1/2 w-4 h-px bg-red-300/70 transform -rotate-45"></div>
                           </div>
+                          
+                          {/* Iris */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                            {/* Inner iris details */}
+                            <div className="absolute inset-1 bg-gradient-to-br from-red-300/30 to-transparent rounded-full"></div>
+                            {/* Pupil */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full border border-red-900">
+                              {/* Pupil reflection */}
+                              <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                            </div>
+                          </div>
+                          
+                          {/* Eye highlights */}
+                          <div className="absolute top-1 right-2 w-2 h-1 bg-white/20 rounded-full blur-sm"></div>
                         </div>
                         
                         {/* Right Eye */}
-                        <div className="relative w-16 h-12 bg-red-500 rounded-full border border-foreground/20">
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full"></div>
+                        <div className="relative w-20 h-14 bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-full border-2 border-red-800 shadow-2xl overflow-hidden">
+                          {/* Bloodshot veins */}
+                          <div className="absolute inset-0">
+                            <div className="absolute top-2 right-3 w-8 h-px bg-red-400/60 transform -rotate-12"></div>
+                            <div className="absolute top-4 left-2 w-6 h-px bg-red-400/40 transform rotate-12"></div>
+                            <div className="absolute bottom-3 right-4 w-5 h-px bg-red-400/50 transform -rotate-45"></div>
+                            <div className="absolute top-1 right-1/2 w-4 h-px bg-red-300/70 transform rotate-45"></div>
                           </div>
+                          
+                          {/* Iris */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-red-400 via-red-500 to-red-700 rounded-full border border-red-800 transition-transform duration-1000 animate-[slide-left-right_2s_ease-in-out_infinite]">
+                            {/* Inner iris details */}
+                            <div className="absolute inset-1 bg-gradient-to-br from-red-300/30 to-transparent rounded-full"></div>
+                            {/* Pupil */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full border border-red-900">
+                              {/* Pupil reflection */}
+                              <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                            </div>
+                          </div>
+                          
+                          {/* Eye highlights */}
+                          <div className="absolute top-1 left-2 w-2 h-1 bg-white/20 rounded-full blur-sm"></div>
                         </div>
                       </div>
                       
