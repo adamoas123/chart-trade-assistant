@@ -314,71 +314,80 @@ const PriceCalculator = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
             <div className="bg-gradient-card border border-border/50 rounded-lg p-4 relative overflow-hidden ninja-border">
-              {/* Ninja Animation */}
-              <div className="absolute inset-0 pointer-events-none">
-                {/* Realistic Ninja Character */}
-                <div className="ninja-runner">
-                  <div className="relative">
-                    {/* Ninja Head with Mask */}
-                    <div className="relative w-6 h-6 mb-1">
-                      {/* Head base */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full"></div>
-                      {/* Ninja mask */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black rounded-full">
-                        {/* Eye opening */}
-                        <div className="absolute top-1.5 left-0.5 right-0.5 h-1.5 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full">
-                          {/* Eyes */}
-                          <div className="absolute top-0.5 left-1 w-1 h-0.5 bg-gray-900 rounded-full ninja-eye-left"></div>
-                          <div className="absolute top-0.5 right-1 w-1 h-0.5 bg-gray-900 rounded-full ninja-eye-right"></div>
-                          {/* Eye glint */}
-                          <div className="absolute top-0.5 left-1.5 w-0.5 h-0.5 bg-white rounded-full opacity-60"></div>
-                          <div className="absolute top-0.5 right-1.5 w-0.5 h-0.5 bg-white rounded-full opacity-60"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Ninja Body */}
-                    <div className="relative w-5 h-8 mx-auto">
-                      {/* Torso */}
-                      <div className="absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg">
-                        {/* Belt */}
-                        <div className="absolute bottom-1 left-0 right-0 h-0.5 bg-yellow-600"></div>
-                        {/* Belt buckle */}
-                        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-0.5 bg-yellow-400 rounded-sm"></div>
-                        {/* Chest detail */}
-                        <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-gray-700 rounded-sm opacity-60"></div>
-                      </div>
-                      
-                      {/* Arms with realistic movement */}
-                      <div className="absolute -left-1 top-0.5 w-3 h-1 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full ninja-arm-left transform-gpu">
-                        {/* Hand */}
-                        <div className="absolute -left-0.5 top-0 w-1 h-1 bg-orange-200 rounded-full">
-                          {/* Sword */}
-                          <div className="absolute -left-1 top-0.5 w-2 h-0.5 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full ninja-sword-left"></div>
+                {/* Ninja Animation */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Realistic Running Ninja Character */}
+                  <div className="ninja-runner">
+                    <div className="relative">
+                      {/* Ninja Head with Mask */}
+                      <div className="relative w-6 h-6 mb-1">
+                        {/* Head base */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full"></div>
+                        {/* Ninja mask */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black rounded-full">
+                          {/* Eye opening */}
+                          <div className="absolute top-1.5 left-0.5 right-0.5 h-1.5 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full">
+                            {/* Eyes */}
+                            <div className="absolute top-0.5 left-1 w-1 h-0.5 bg-gray-900 rounded-full ninja-eye-left"></div>
+                            <div className="absolute top-0.5 right-1 w-1 h-0.5 bg-gray-900 rounded-full ninja-eye-right"></div>
+                            {/* Eye glint */}
+                            <div className="absolute top-0.5 left-1.5 w-0.5 h-0.5 bg-white rounded-full opacity-60"></div>
+                            <div className="absolute top-0.5 right-1.5 w-0.5 h-0.5 bg-white rounded-full opacity-60"></div>
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="absolute -right-1 top-0.5 w-3 h-1 bg-gradient-to-l from-gray-800 to-gray-900 rounded-full ninja-arm-right transform-gpu">
-                        {/* Hand */}
-                        <div className="absolute -right-0.5 top-0 w-1 h-1 bg-orange-200 rounded-full"></div>
+                      {/* Ninja Body */}
+                      <div className="relative w-5 h-8 mx-auto">
+                        {/* Torso */}
+                        <div className="absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg">
+                          {/* Belt */}
+                          <div className="absolute bottom-1 left-0 right-0 h-0.5 bg-yellow-600"></div>
+                          {/* Belt buckle */}
+                          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-0.5 bg-yellow-400 rounded-sm"></div>
+                          {/* Chest detail */}
+                          <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-gray-700 rounded-sm opacity-60"></div>
+                        </div>
+                        
+                        {/* Arms with realistic running movement */}
+                        <div className="absolute -left-1 top-0.5 w-3 h-1 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full ninja-arm-left transform-gpu">
+                          {/* Hand */}
+                          <div className="absolute -left-0.5 top-0 w-1 h-1 bg-orange-200 rounded-full">
+                            {/* Sword */}
+                            <div className="absolute -left-1 top-0.5 w-2 h-0.5 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full ninja-sword-left"></div>
+                          </div>
+                        </div>
+                        
+                        <div className="absolute -right-1 top-0.5 w-3 h-1 bg-gradient-to-l from-gray-800 to-gray-900 rounded-full ninja-arm-right transform-gpu">
+                          {/* Hand */}
+                          <div className="absolute -right-0.5 top-0 w-1 h-1 bg-orange-200 rounded-full"></div>
+                        </div>
+                        
+                        {/* Legs with realistic running stride */}
+                        <div className="absolute left-0.5 bottom-0 w-1.5 h-3 bg-gradient-to-b from-gray-800 to-gray-900 rounded-b-full ninja-leg-left transform-gpu">
+                          {/* Foot with wall contact */}
+                          <div className="absolute -left-0.5 bottom-0 w-2 h-1 bg-gray-900 rounded-full ninja-foot-left">
+                            {/* Foot contact particle */}
+                            <div className="absolute -bottom-0.5 left-0 w-3 h-0.5 bg-white/20 rounded-full ninja-foot-particle"></div>
+                          </div>
+                        </div>
+                        
+                        <div className="absolute right-0.5 bottom-0 w-1.5 h-3 bg-gradient-to-b from-gray-800 to-gray-900 rounded-b-full ninja-leg-right transform-gpu">
+                          {/* Foot with wall contact */}
+                          <div className="absolute -right-0.5 bottom-0 w-2 h-1 bg-gray-900 rounded-full ninja-foot-right">
+                            {/* Foot contact particle */}
+                            <div className="absolute -bottom-0.5 right-0 w-3 h-0.5 bg-white/20 rounded-full ninja-foot-particle"></div>
+                          </div>
+                        </div>
                       </div>
                       
-                      {/* Legs with realistic movement */}
-                      <div className="absolute left-0.5 bottom-0 w-1.5 h-3 bg-gradient-to-b from-gray-800 to-gray-900 rounded-b-full ninja-leg-left transform-gpu">
-                        {/* Foot */}
-                        <div className="absolute -left-0.5 bottom-0 w-2 h-1 bg-gray-900 rounded-full"></div>
-                      </div>
+                      {/* Ninja Cape/Scarf flowing */}
+                      <div className="absolute -top-1 -left-1 w-8 h-2 bg-gradient-to-r from-red-800 to-red-900 rounded-full ninja-cape opacity-80"></div>
                       
-                      <div className="absolute right-0.5 bottom-0 w-1.5 h-3 bg-gradient-to-b from-gray-800 to-gray-900 rounded-b-full ninja-leg-right transform-gpu">
-                        {/* Foot */}
-                        <div className="absolute -right-0.5 bottom-0 w-2 h-1 bg-gray-900 rounded-full"></div>
-                      </div>
+                      {/* Running shadow */}
+                      <div className="absolute -bottom-1 left-0 w-6 h-1 bg-black/30 rounded-full ninja-shadow"></div>
                     </div>
-                    
-                    {/* Ninja Cape/Scarf */}
-                    <div className="absolute -top-1 -left-1 w-8 h-2 bg-gradient-to-r from-red-800 to-red-900 rounded-full ninja-cape opacity-80"></div>
                   </div>
-                </div>
                 
                 {/* Realistic Throwing Shurikens */}
                 <div className="shuriken-1">
