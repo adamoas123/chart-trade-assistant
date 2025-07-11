@@ -313,7 +313,51 @@ const PriceCalculator = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
-            <div className="bg-gradient-card border border-border/50 rounded-lg p-4">
+            <div className="bg-gradient-card border border-border/50 rounded-lg p-4 relative overflow-hidden ninja-border">
+              {/* Ninja Animation */}
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Ninja Character */}
+                <div className="ninja-runner">
+                  <div className="w-3 h-4 bg-gradient-to-b from-gray-800 to-black rounded-t-full relative">
+                    {/* Ninja Head */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rounded-full">
+                      <div className="absolute top-0.5 left-0.5 w-0.5 h-0.5 bg-red-500 rounded-full"></div>
+                      <div className="absolute top-0.5 right-0.5 w-0.5 h-0.5 bg-red-500 rounded-full"></div>
+                    </div>
+                    {/* Ninja Body */}
+                    <div className="absolute top-1.5 left-0 right-0 h-2 bg-gray-800 rounded-b-sm">
+                      {/* Arms */}
+                      <div className="absolute -left-0.5 top-0 w-1 h-1 bg-gray-700 rounded-full ninja-arm-left"></div>
+                      <div className="absolute -right-0.5 top-0 w-1 h-1 bg-gray-700 rounded-full ninja-arm-right"></div>
+                    </div>
+                    {/* Legs */}
+                    <div className="absolute bottom-0 left-0.5 w-0.5 h-1 bg-gray-800 ninja-leg-left"></div>
+                    <div className="absolute bottom-0 right-0.5 w-0.5 h-1 bg-gray-800 ninja-leg-right"></div>
+                  </div>
+                </div>
+                
+                {/* Throwing Knives */}
+                <div className="knife-1">
+                  <div className="w-1 h-3 bg-silver relative">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gray-400 rounded-t-full"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-600 to-gray-800"></div>
+                  </div>
+                </div>
+                
+                <div className="knife-2">
+                  <div className="w-1 h-3 bg-silver relative">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gray-400 rounded-t-full"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-600 to-gray-800"></div>
+                  </div>
+                </div>
+                
+                <div className="knife-3">
+                  <div className="w-1 h-3 bg-silver relative">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gray-400 rounded-t-full"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-600 to-gray-800"></div>
+                  </div>
+                </div>
+              </div>
               <div className="mb-4">
                 <h2 className="text-sm font-light text-foreground mb-1 flex items-center gap-2">
                   <Shield className="h-3 w-3" />

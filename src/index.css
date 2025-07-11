@@ -200,3 +200,191 @@ All colors MUST be HSL.
   50% { height: 3rem; opacity: 1; }
   100% { height: 2.5rem; opacity: 0.8; }
 }
+
+/* Ninja Border Animation */
+@keyframes ninja-run {
+  0% { 
+    top: -4px; 
+    left: -4px; 
+    transform: rotate(0deg) scale(1);
+  }
+  25% { 
+    top: -4px; 
+    left: calc(100% - 8px); 
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% { 
+    top: calc(100% - 12px); 
+    left: calc(100% - 8px); 
+    transform: rotate(180deg) scale(1);
+  }
+  75% { 
+    top: calc(100% - 12px); 
+    left: -4px; 
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% { 
+    top: -4px; 
+    left: -4px; 
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes ninja-arms {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+@keyframes ninja-legs {
+  0%, 100% { transform: scaleY(1); }
+  25%, 75% { transform: scaleY(1.3); }
+  50% { transform: scaleY(0.8); }
+}
+
+@keyframes knife-throw-1 {
+  0% { 
+    opacity: 0; 
+    top: 50%; 
+    left: 10%; 
+    transform: rotate(0deg) scale(0);
+  }
+  10% { 
+    opacity: 1; 
+    transform: rotate(45deg) scale(1);
+  }
+  90% { 
+    opacity: 1; 
+    top: 50%; 
+    right: 10%; 
+    transform: rotate(720deg) scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(720deg) scale(0);
+  }
+}
+
+@keyframes knife-throw-2 {
+  0% { 
+    opacity: 0; 
+    top: 10%; 
+    left: 50%; 
+    transform: rotate(0deg) scale(0);
+  }
+  15% { 
+    opacity: 1; 
+    transform: rotate(-45deg) scale(1);
+  }
+  85% { 
+    opacity: 1; 
+    bottom: 10%; 
+    left: 50%; 
+    transform: rotate(-540deg) scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(-540deg) scale(0);
+  }
+}
+
+@keyframes knife-throw-3 {
+  0% { 
+    opacity: 0; 
+    top: 50%; 
+    right: 10%; 
+    transform: rotate(0deg) scale(0);
+  }
+  20% { 
+    opacity: 1; 
+    transform: rotate(135deg) scale(1);
+  }
+  80% { 
+    opacity: 1; 
+    top: 50%; 
+    left: 10%; 
+    transform: rotate(630deg) scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(630deg) scale(0);
+  }
+}
+
+.ninja-border .ninja-runner {
+  position: absolute;
+  z-index: 10;
+  animation: ninja-run 8s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.ninja-border .ninja-arm-left {
+  animation: ninja-arms 0.5s ease-in-out infinite;
+  transform-origin: right center;
+}
+
+.ninja-border .ninja-arm-right {
+  animation: ninja-arms 0.5s ease-in-out infinite reverse;
+  transform-origin: left center;
+}
+
+.ninja-border .ninja-leg-left {
+  animation: ninja-legs 0.3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.ninja-border .ninja-leg-right {
+  animation: ninja-legs 0.3s ease-in-out infinite reverse;
+  transform-origin: top center;
+}
+
+.ninja-border .knife-1 {
+  position: absolute;
+  z-index: 5;
+  animation: knife-throw-1 3s ease-in-out infinite;
+  animation-delay: 2s;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
+.ninja-border .knife-2 {
+  position: absolute;
+  z-index: 5;
+  animation: knife-throw-2 3s ease-in-out infinite;
+  animation-delay: 4s;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
+.ninja-border .knife-3 {
+  position: absolute;
+  z-index: 5;
+  animation: knife-throw-3 3s ease-in-out infinite;
+  animation-delay: 6s;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
+.ninja-border {
+  border: 2px solid hsl(var(--border));
+  position: relative;
+}
+
+.ninja-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    hsl(var(--border)) 0%, 
+    hsl(var(--accent)) 25%, 
+    hsl(var(--border)) 50%, 
+    hsl(var(--primary)) 75%, 
+    hsl(var(--border)) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  animation: border-glow 4s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
